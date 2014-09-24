@@ -1,0 +1,266 @@
+/*
+* Custom variables
+*/
+$main-font: 'Lato', sans-serif;
+$sub-font: 'Montserrat', sans-serif;
+$fancy-font: 'Kaushan Script', cursive;
+$font-size: 16px;
+
+$black: #000;
+$white: #FFF;
+$grey: #585c65;
+$mediumgrey: #9b9b9b;
+$lightgrey: #eeeeee;
+$blue: #3466a1;
+
+$padding: 10px;
+$margin: 10px;
+
+/*
+* Override Bootstrap variables
+*/
+$font-family-sans-serif: $main-font;
+
+@import 'bootstrap';
+
+* {
+    position: relative;
+    box-sizing: border-box;
+}
+
+body {
+    color: $grey;
+    font-size: $font-size;
+}
+
+
+header {
+    max-height: 600px;
+    height: 600px;
+    overflow: hidden;
+
+    img {
+        position: fixed;
+        top: 0px;
+        left: 50%;
+        margin-left: -600px;
+        width: 1200px;
+
+        @media screen and (min-width: $screen-lg) {
+            top: auto;
+            left: auto;
+            margin: 0;
+            width: 100%;
+        }
+    }
+
+    .name {
+        font-size: 21px;
+        position: absolute;
+        top: 50px;
+        left: 50px;
+        color: $white;
+    }
+
+    .titles {
+        position: absolute;
+        bottom: 40%;
+        width: 100%;
+        text-align: center;
+
+        @media screen and (min-width: $screen-lg) {
+            bottom: 50%;
+        }
+    }
+
+    h1, h2 {
+        width: 100%;
+        color: $white;
+        margin: 0;
+    }
+
+    h1 {
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 36px;
+        letter-spacing: 0.06em;
+        margin-bottom: $margin;
+
+        span {
+            display: block;
+
+            @media screen and (min-width: $screen-md) {
+                display: inline;
+            }
+        }
+     }
+
+     h2 {
+        font-size: 16px;
+        width: 70%;
+        margin: 0 auto;
+
+        @media screen and (min-width: $screen-lg) {
+            width: 100%;
+            margin: 0;
+        }
+     }
+
+     .social {
+        position: absolute;
+        top: 55px;
+        right: 50px;
+        overflow: hidden;
+
+        a {
+            float: left;
+            width: 26px;
+            height: 26px;
+            margin: 0 5px;
+            text-indent: -9999px;
+            background: url(../images/social-sprite.png) no-repeat;
+            opacity: 0.8;
+
+            &:hover {
+                opacity: 1.0;
+            }
+
+            @media screen and (-webkit-min-device-pixel-ratio: 2), screen and (-min-device-pixel-ratio: 2) {
+                background: url(../images/social-sprite@2x.png) no-repeat;
+                background-size: 76px 26px;
+            }
+
+            &.facebook {
+                background-position: 0px 0px;
+            }
+
+            &.twitter {
+                background-position: -25px 0px;
+            }
+
+            &.instagram {
+                background-position: -50px 0px;
+            }
+        }
+     }
+}
+
+.instagram-wrap {
+    background: $lightgrey;
+}
+
+.instagram-content {
+    h3 {
+        text-transform: uppercase;
+        letter-spacing: 0.5em;
+        font-size: 12px;
+        font-weight: 700;
+        text-align: center;
+        padding: $padding*5 0;
+        color: darken($lightgrey, 20%);
+    }
+
+    .photo-box {
+        margin: 0 0 $margin*3 0;
+
+        .image-wrap {
+            img {
+                width: 100%;
+            }
+
+            .likes {
+                position: absolute;
+                bottom: 5px;
+                left: 15px;
+                padding: $padding/2;
+                background: $black;
+                background: rgba($black, 0.4);
+                color: $white;
+            }
+        }
+        .description {
+            font-family: $sub-font;
+            font-size: 12px;
+            background: $white;
+            color: $mediumgrey;
+            letter-spacing: 1px;
+            padding: $padding*1.5;
+            height: 75px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    }
+
+}
+
+footer {
+    background: $white;
+    padding: $padding*3 0;
+    text-align: center;
+
+    @media screen and (min-width: $screen-lg) {
+        padding: $padding*10 0;
+    }
+
+    h4 {
+        font-size: 36px;
+        text-align: center;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .about-text {
+        padding: 0 $padding*3;
+
+        @media screen and (min-width: $screen-lg) {
+            width: 650px;
+            margin: 0 auto;
+        }
+    }
+
+    .contact-now-btn {
+        display: inline-block;
+        width: 70%;
+        padding: $padding*2 $padding*5;
+        margin-top: $margin*2;
+        color: $white;
+        background: $grey;
+        font-size: 13px;
+        letter-spacing: 1px;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        @media screen and (min-width: $screen-md) {
+            width: 60%;
+        }
+
+        @media screen and (min-width: $screen-lg) {
+            width: 20%;
+            margin-top: $margin*5;
+        }
+
+        &:hover {
+            background: lighten($grey, 5%);
+        }
+    }
+}
+
+.footer-bottom {
+    background: $white;
+    padding: $padding $padding*6;
+    border-top: 2px solid $lightgrey;
+    letter-spacing: 2px;
+    text-align: center;
+    color: $mediumgrey;
+    text-transform: uppercase;
+
+    @media screen and (min-width: $screen-md) {
+        padding: $padding*4 0;
+    }
+}
+
+.fancy-font {
+    font-family: $fancy-font;
+}
